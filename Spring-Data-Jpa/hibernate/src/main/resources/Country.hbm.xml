@@ -1,0 +1,19 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name = "com.example.Country" table = "country">
+      
+      <meta attribute = "class-description">
+         This class contains the country detail. 
+      </meta>
+      
+      <id name = "code" type = "string" column = "co_code"/>
+      
+      <property name = "name" column = "co_name" type = "string"/>
+
+      
+   </class>
+</hibernate-mapping>
