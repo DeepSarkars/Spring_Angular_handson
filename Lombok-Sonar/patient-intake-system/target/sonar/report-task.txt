@@ -1,6 +1,6 @@
-projectKey=Patient
+projectKey=patient-intake
 serverUrl=http://localhost:9000
 serverVersion=8.8.0.42792
-dashboardUrl=http://localhost:9000/dashboard?id=Patient
-ceTaskId=AXk7Sl1fl7wa-jOMuPeQ
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AXk7Sl1fl7wa-jOMuPeQ
+dashboardUrl=http://localhost:9000/dashboard?id=patient-intake
+ceTaskId=AXlMliQrQq7Bdfek5l7j
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXlMliQrQq7Bdfek5l7j

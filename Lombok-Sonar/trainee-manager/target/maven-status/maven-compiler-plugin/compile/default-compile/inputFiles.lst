@@ -1,5 +1,6 @@
-C:\Users\pavit\JavaStage3-workspace\LS_trainee-manager\src\main\java\org\example\exception\InvalidTraineeDataException.java
-C:\Users\pavit\JavaStage3-workspace\LS_trainee-manager\src\main\java\org\example\dao\TraineeDao.java
-C:\Users\pavit\JavaStage3-workspace\LS_trainee-manager\src\main\java\org\example\model\Trainee.java
-C:\Users\pavit\JavaStage3-workspace\LS_trainee-manager\src\main\java\org\example\dao\TraineeDaoImpl.java
-C:\Users\pavit\JavaStage3-workspace\LS_trainee-manager\src\main\java\org\example\Application.java
+C:\Users\user\Documents\Spring_Angular_Handson\Lombok-Sonar\trainee-manager\src\main\java\com\cognizant\traineemanager\dao\TraineeDaoImpl.java
+C:\Users\user\Documents\Spring_Angular_Handson\Lombok-Sonar\trainee-manager\src\main\java\com\cognizant\traineemanager\model\Trainee.java
+C:\Users\user\Documents\Spring_Angular_Handson\Lombok-Sonar\trainee-manager\src\main\java\com\cognizant\traineemanager\TraineeManagerApplication.java
+C:\Users\user\Documents\Spring_Angular_Handson\Lombok-Sonar\trainee-manager\src\main\java\com\cognizant\traineemanager\exceptions\InvalidTraineeOperationException.java
+C:\Users\user\Documents\Spring_Angular_Handson\Lombok-Sonar\trainee-manager\src\main\java\com\cognizant\traineemanager\dao\TraineeDao.java
+C:\Users\user\Documents\Spring_Angular_Handson\Lombok-Sonar\trainee-manager\src\main\java\com\cognizant\traineemanager\exceptions\InvalidTraineeDataException.java

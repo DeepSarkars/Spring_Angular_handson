@@ -1,4 +1,4 @@
-org\example\Doctor.class
-org\example\Main.class
-org\example\PatientAppointment.class
-org\example\ClinicCalendar.class
+com\cognizant\patientintakesystem\PatientIntakeApp.class
+com\cognizant\patientintakesystem\Doctor.class
+com\cognizant\patientintakesystem\PatientAppointment.class
+com\cognizant\patientintakesystem\ClinicCalendar.class
