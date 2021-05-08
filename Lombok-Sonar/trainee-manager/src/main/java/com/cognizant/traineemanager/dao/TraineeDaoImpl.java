@@ -28,20 +28,17 @@ public class TraineeDaoImpl implements TraineeDao {
 		if (!emailMatcher.matches()) {
 			throw new InvalidTraineeDataException("Make sure email is in correct format\n");
 		}
-		
-		// name constraint
+
 				char[] chars = name.toCharArray();
 				for (char c : chars) {
 					if (Character.isDigit(c))
 						throw new InvalidTraineeDataException("Name cannot have numeric data");
 				}
 
-				// id constraint
 				if (String.valueOf(empid).length() != 6) {
 					throw new InvalidTraineeDataException("Empid should have 6 numbers");
 				}
 
-				// cohort constraint AAAXXAAXX
 				String validCohort = "^[A-Za-z]{3}[0-9]{2}[A-Za-z]{2}[0-9]{2}";
 				Pattern cohortPattern = Pattern.compile(validCohort);
 				Matcher cohortMatcher = cohortPattern.matcher(cohortCode);

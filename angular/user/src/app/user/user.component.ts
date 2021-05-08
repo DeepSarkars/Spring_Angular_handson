@@ -13,6 +13,12 @@ import { UserService } from '../user.service';
 export class UserComponent implements OnInit {
 
   users: User[];
+  post : User ={
+    id: 1,
+    first_name: "Deep",
+    last_name: "Sarkar",
+    email: "abc@abc.co"
+  }
   constructor(public http: HttpClient, private userService: UserService){}
 
   ngOnInit(){
@@ -28,4 +34,21 @@ export class UserComponent implements OnInit {
     });
   }
   title = 'user';
+
+  postUser(){
+    this.userService.addUser(this.post)
+    .subscribe(user => console.log('User added: ', user));
+  }
+
+  updateUser(): void {
+    this.userService.updateUser(this.post).
+    subscribe(user => console.log('User Updated : ', user));
+  }
+
+  deleteUser():void{
+    this.userService.deleteUser(1);
+    console.log('User id 1 deleted ');
+  
+
+  }
 }
