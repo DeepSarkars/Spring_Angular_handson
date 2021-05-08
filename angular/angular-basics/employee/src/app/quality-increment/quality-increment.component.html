@@ -1,0 +1,4 @@
+<p>quality-increment works!</p>
+<button (click)="increment($event)">Increment</button>
+<input type="text" value="{{count}}" [(ngModel)]="count" mi/>
+<button (click)="decrement($event)" *ngIf="count>0">Decrement</button>

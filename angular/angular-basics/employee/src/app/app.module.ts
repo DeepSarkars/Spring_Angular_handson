@@ -5,16 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ViewEmpComponent } from './view-emp/view-emp.component';
 import { HomeComponent } from './home/home.component';
+import { QualityIncrementComponent } from './quality-increment/quality-increment.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewEmpComponent,
-    HomeComponent
+    HomeComponent,
+    QualityIncrementComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
