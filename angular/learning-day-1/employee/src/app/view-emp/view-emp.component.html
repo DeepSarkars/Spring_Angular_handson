@@ -1,0 +1,8 @@
+<h1>Employee Details</h1>
+<h4>Id : {{employee.id}}</h4>
+<h4>Name : {{employee.name}}</h4>
+<h4>Salary : ${{employee.salary}}</h4>
+<h4>Skills</h4>
+<h5 *ngFor="let skill of employee.skills">
+{{skill.id}} - {{skill.name}}
+</h5>

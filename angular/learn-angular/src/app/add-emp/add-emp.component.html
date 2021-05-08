@@ -1,0 +1,57 @@
+<div>
+    <h2>Add employee</h2>
+
+    <form #userForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+        {{ userForm.value | json }}
+        <hr />
+        {{ employeeModel | json }}
+        <hr />
+        <div>
+            <label>ID</label>
+            <input type="text" name="id" [(ngModel)]="employeeModel.id" required
+            #id="ngModel"/>
+            <small *ngIf="id.invalid">ID required</small>
+        </div>
+
+        <div>
+            <label>Name</label>
+            <input type="text" name="name" [(ngModel)]="employeeModel.name"
+            #name="ngModel" minlength="4"/>
+            <small *ngIf="name.invalid">name should be atleast 4 characters</small>
+        </div>
+
+        <div>
+            <label>Salary</label>
+            <input type="number"name="salary" [(ngModel)]="employeeModel.salary"
+             #salary="ngModel"/>
+        </div>
+
+        <div>
+            <input type="checkbox" name="permanent" [(ngModel)]="employeeModel.permanent" />
+            <label> Permanent or not </label>
+        </div>
+
+        <div>
+            <label>Department</label>
+            <select type="text" name="department" [(ngModel)]="employeeModel.department">
+                <option *ngFor="let dept of departments" [ngValue]="dept">{{dept.name}}</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Date of Birth</label>
+            <input type="text" name="dob" [(ngModel)]="employeeModel.dob" />
+        </div>
+
+        <button [disabled]="!userForm.form.valid" type="submit">Submit form</button>
+    </form>
+    <div>name.invalid - {{name.invalid}}</div>
+
+    <div>name.touched - {{name.touched}}</div>
+
+    <div>name.dirty - {{name.dirty}}</div>
+
+    <div>name.errors.required - {{name.errors?.required}}</div>
+
+    <div>name.errors.minlength - {{name.errors?.minlength | json}}</div>
+</div>
