@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CakeController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">BakingoCakeService</a> &gt; <a href="index.source.html" class="el_package">com.cognizant.bakingo.controller</a> &gt; <span class="el_source">CakeController.java</span></div><h1>CakeController.java</h1><pre class="source lang-java linenums">package com.cognizant.bakingo.controller;
+
+import java.util.Date;
+import java.util.Set;
+
+import javax.validation.Valid;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.cognizant.bakingo.bean.Cake;
+import com.cognizant.bakingo.service.CakeService;
+
+@Controller
+<span class="fc" id="L20">public class CakeController {</span>
+
+	private static final String PLACE_ORDER = &quot;placeOrder&quot;;
+
+	@Autowired
+	private CakeService cakeService;
+
+	// add the code as per the requirement
+	@GetMapping(value = &quot;/showCakeOrderForm&quot;)
+	public String showCakeOrderForm(@ModelAttribute(&quot;cake&quot;) Cake cake) {
+<span class="fc" id="L30">		return PLACE_ORDER;</span>
+	}
+
+	@PostMapping(value = &quot;/orderStatus&quot;)
+	public String getOrderStatus(@Valid @ModelAttribute(&quot;cake&quot;) Cake cake, BindingResult result, ModelMap map) {
+<span class="fc bfc" id="L35" title="All 2 branches covered.">		if (result.hasErrors())</span>
+<span class="fc" id="L36">			return PLACE_ORDER;</span>
+
+<span class="fc" id="L38">		int flavorRate = CakeService.getFlavorList().get(cake.getFlavor());</span>
+
+<span class="fc bfc" id="L40" title="All 2 branches covered.">		if (cake.getIncludeCandles() == null)</span>
+<span class="fc" id="L41">			cake.setIncludeCandles(0); // To prevent NullPointerException</span>
+
+<span class="fc bfc" id="L43" title="All 2 branches covered.">		if (cake.getIncludeinscription() == null)</span>
+<span class="fc" id="L44">			cake.setIncludeinscription(0);</span>
+
+<span class="fc" id="L46">		double price = (double) (cake.getSelectedcake() + flavorRate + cake.getIncludeCandles()</span>
+<span class="fc" id="L47">				+ cake.getIncludeinscription());</span>
+<span class="fc" id="L48">		cake.setPrice(price);</span>
+
+<span class="fc" id="L50">		int orderId = CakeService.addOrder(cake);</span>
+
+<span class="fc" id="L52">		map.addAttribute(&quot;cake&quot;, cake);</span>
+<span class="fc" id="L53">		map.addAttribute(&quot;indianPrice&quot;, cake.getPrice() * 75);</span>
+<span class="fc" id="L54">		map.addAttribute(&quot;orderId&quot;, orderId);</span>
+<span class="fc" id="L55">		map.addAttribute(&quot;orderDate&quot;, new Date().toString());</span>
+
+<span class="fc" id="L57">		return &quot;orderStatus&quot;;</span>
+
+	}
+
+	@ModelAttribute(&quot;flavorList&quot;)
+	public Set&lt;String&gt; populateFillingList() {
+<span class="fc" id="L63">		return CakeService.getFlavorList().keySet();</span>
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
