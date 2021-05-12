@@ -3,4 +3,4 @@
 - Spring Data JPA (all completed).
 - Practice Check (all completed).
 - Lombok and Sonar (all completed, extra practice done).
-- Angular (only authguard remaining)
+- Angular (all completed)
